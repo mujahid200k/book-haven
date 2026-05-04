@@ -1,0 +1,110 @@
+[
+  {
+    "id": "1",
+    "title": "The Midnight Library",
+    "author": "Matt Haig",
+    "description": "Between life and death there is a library, and within that library, the shelves go on forever. Every book provides a chance to try another life you could have lived. A deeply moving and inspiring story about the choices we make and the infinite possibilities each life contains.",
+    "category": "Story",
+    "available_quantity": 5,
+    "image_url": "https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=400&h=600&fit=crop"
+  },
+  {
+    "id": "2",
+    "title": "Clean Code",
+    "author": "Robert C. Martin",
+    "description": "Even bad code can function. But if code isn't clean, it can bring a development organization to its knees. This book will teach you the principles of writing clean, maintainable code that stands the test of time.",
+    "category": "Tech",
+    "available_quantity": 8,
+    "image_url": "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?w=400&h=600&fit=crop"
+  },
+  {
+    "id": "3",
+    "title": "A Brief History of Time",
+    "author": "Stephen Hawking",
+    "description": "A landmark volume in science writing, this book explores questions of the universe's origins and fate, the nature of time, and the possibility of time travel. Written for non-scientists in language anyone can understand.",
+    "category": "Science",
+    "available_quantity": 4,
+    "image_url": "https://images.unsplash.com/photo-1614544048536-0d28caf77f41?w=400&h=600&fit=crop"
+  },
+  {
+    "id": "4",
+    "title": "The Alchemist",
+    "author": "Paulo Coelho",
+    "description": "A magical story of Santiago, an Andalusian shepherd boy who yearns to travel in search of treasure. Following your dreams and listening to your heart becomes the central theme of this international bestseller.",
+    "category": "Story",
+    "available_quantity": 7,
+    "image_url": "https://images.unsplash.com/photo-1512820790803-83ca734da794?w=400&h=600&fit=crop"
+  },
+  {
+    "id": "5",
+    "title": "Design Patterns",
+    "author": "Gang of Four",
+    "description": "Capturing a wealth of experience about the design of object-oriented software, this book describes simple and elegant solutions to specific problems in object-oriented software design.",
+    "category": "Tech",
+    "available_quantity": 6,
+    "image_url": "https://images.unsplash.com/photo-1509021436665-8f07dbf5bf1d?w=400&h=600&fit=crop"
+  },
+  {
+    "id": "6",
+    "title": "Sapiens",
+    "author": "Yuval Noah Harari",
+    "description": "From a renowned historian comes a groundbreaking narrative of humanity's creation and evolution that explores the ways in which biology and history have defined us and enhanced our understanding of what it means to be human.",
+    "category": "Science",
+    "available_quantity": 9,
+    "image_url": "https://images.unsplash.com/photo-1589998059171-988d887df646?w=400&h=600&fit=crop"
+  },
+  {
+    "id": "7",
+    "title": "1984",
+    "author": "George Orwell",
+    "description": "A dystopian masterpiece that has become a defining narrative of the 20th century. Winston Smith struggles to preserve truth and sanity in a world dominated by Big Brother and the Thought Police.",
+    "category": "Story",
+    "available_quantity": 3,
+    "image_url": "https://images.unsplash.com/photo-1543002588-bfa74002ed7e?w=400&h=600&fit=crop"
+  },
+  {
+    "id": "8",
+    "title": "JavaScript: The Good Parts",
+    "author": "Douglas Crockford",
+    "description": "Most programming languages contain good and bad parts, but JavaScript has more than its share of the bad. This book scrapes away these bad features to reveal a subset of JavaScript that's more reliable, readable, and maintainable.",
+    "category": "Tech",
+    "available_quantity": 5,
+    "image_url": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=400&h=600&fit=crop"
+  },
+  {
+    "id": "9",
+    "title": "The Gene: An Intimate History",
+    "author": "Siddhartha Mukherjee",
+    "description": "A comprehensive history of genetics and genomics that brings to life the quest to decipher the master-code instructions that make and define humans—and the future of genetic technologies.",
+    "category": "Science",
+    "available_quantity": 4,
+    "image_url": "https://images.unsplash.com/photo-1576086213369-97a306d36557?w=400&h=600&fit=crop"
+  },
+  {
+    "id": "10",
+    "title": "The Great Gatsby",
+    "author": "F. Scott Fitzgerald",
+    "description": "Set in the Jazz Age on Long Island, this novel chronicles the tragic story of self-made millionaire Jay Gatsby and his pursuit of Daisy Buchanan, a wealthy young woman whom he loved in his youth.",
+    "category": "Story",
+    "available_quantity": 6,
+    "image_url": "https://images.unsplash.com/photo-1553729459-efe14ef6055d?w=400&h=600&fit=crop"
+  },
+  {
+    "id": "11",
+    "title": "You Don't Know JS",
+    "author": "Kyle Simpson",
+    "description": "This is a series that dives deep into the core mechanisms of the JavaScript language. No matter how much experience you have with JavaScript, odds are you don't fully understand the language.",
+    "category": "Tech",
+    "available_quantity": 7,
+    "image_url": "https://images.unsplash.com/photo-1532012197267-da84d127e765?w=400&h=600&fit=crop"
+  },
+  {
+    "id": "12",
+    "title": "Cosmos",
+    "author": "Carl Sagan",
+    "description": "Cosmos traces the origins of knowledge and the scientific method, mixing science and philosophy, and speculates to the future of science. The book also explores spacecraft missions, and the identification of our location in the universe.",
+    "category": "Science",
+    "available_quantity": 5,
+    "image_url": "https://images.unsplash.com/photo-1519682337058-a94d519337bc?w=400&h=600&fit=crop"
+  }
+]
