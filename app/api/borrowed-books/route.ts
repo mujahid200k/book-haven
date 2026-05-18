@@ -2,12 +2,14 @@ import { NextRequest, NextResponse } from 'next/server';
 import dbConnect from '@/lib/db';
 import BorrowedBook from '@/models/BorrowedBook';
 import Book from '@/models/Book';
- 
+
+export const dynamic = 'force-dynamic'; // ✅ এই line টা যোগ করো
+
 export async function GET(request: NextRequest) {
   try {
     const { searchParams } = new URL(request.url);
     const userId = searchParams.get('userId');
- 
+
     if (!userId) {
       return NextResponse.json(
         {
@@ -17,15 +19,13 @@ export async function GET(request: NextRequest) {
         { status: 400 }
       );
     }
- 
+
     await dbConnect();
- 
-    // Find all borrowed books for this user
+
     const borrowedBooks = await BorrowedBook.find({ userId }).sort({
       borrowDate: -1,
     });
- 
-    // Fetch book details for each borrowed book
+
     const borrowedBooksWithDetails = await Promise.all(
       borrowedBooks.map(async (borrowedBook) => {
         const book = await Book.findOne({ id: borrowedBook.bookId });
@@ -35,7 +35,7 @@ export async function GET(request: NextRequest) {
         };
       })
     );
- 
+
     return NextResponse.json({
       success: true,
       borrowedBooks: borrowedBooksWithDetails,
@@ -51,7 +51,6 @@ export async function GET(request: NextRequest) {
     );
   }
 }
-
 
 
 

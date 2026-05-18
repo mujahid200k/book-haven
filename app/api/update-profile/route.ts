@@ -4,22 +4,12 @@ import { auth } from '@/lib/auth';
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const { userId, name, image } = body;
- 
-    if (!userId) {
-      return NextResponse.json(
-        {
-          success: false,
-          message: 'User ID is required',
-        },
-        { status: 400 }
-      );
-    }
- 
+    const { name, image } = body; // userId সরিয়ে দিলাম
+
     // Update user using Better Auth
-    const updatedUser = await auth.api.updateUser({
+    await auth.api.updateUser({
+      headers: request.headers, // session থেকে user identify করবে
       body: {
-        userId,
         name,
         image,
       },
@@ -28,8 +18,9 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({
       success: true,
       message: 'Profile updated successfully',
-      user: updatedUser,
+      // user: updatedUser ← এটা সরিয়ে দিলাম
     });
+
   } catch (error) {
     console.error('Error updating profile:', error);
     return NextResponse.json(
@@ -41,6 +32,3 @@ export async function POST(request: NextRequest) {
     );
   }
 }
-
-
-

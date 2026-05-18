@@ -57,7 +57,7 @@ export default function Footer() {
             <ul className="space-y-3">
               <li className="flex items-center gap-2">
                 <Mail className="w-5 h-5 text-primary" />
-                <span className="text-sm">support@bookhaven.com</span>
+                <span className="text-sm">mujahid20lacdollar@gmail.com</span>
               </li>
               <li className="flex items-center gap-2">
                 <Phone className="w-5 h-5 text-primary" />
@@ -75,7 +75,7 @@ export default function Footer() {
             <h3 className="text-white font-semibold text-lg mb-4">Follow Us</h3>
             <div className="flex gap-4">
               <a
-                href="https://facebook.com"
+                href="https://www.facebook.com/muhammed.mujahid.54293/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-gray-800 p-3 rounded-full hover:bg-primary transition-colors"
@@ -99,7 +99,8 @@ export default function Footer() {
                 <Instagram className="w-5 h-5" />
               </a>
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/muhammed-mujahid-837187328?utm_source=share_via&utm_content=profile&utm_medium=member_android
+"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-gray-800 p-3 rounded-full hover:bg-primary transition-colors"

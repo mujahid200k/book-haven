@@ -1,5 +1,4 @@
 'use client';
- 
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { useSession } from '@/lib/auth-client';
@@ -16,7 +15,6 @@ export default function UpdateProfilePage() {
   const [loading, setLoading] = useState(false);
  
   useEffect(() => {
-    // Redirect if not logged in
     if (!isPending && !session?.user) {
       toast.error('Please login to update your profile');
       router.push('/login');
@@ -49,7 +47,6 @@ export default function UpdateProfilePage() {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          userId: session?.user?.id,
           name: formData.name,
           image: formData.image,
         }),
@@ -73,7 +70,7 @@ export default function UpdateProfilePage() {
  
   if (isPending) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
+      <div className="flex items-center justify-center min-h-screen">
         <div className="spinner"></div>
       </div>
     );
@@ -84,13 +81,12 @@ export default function UpdateProfilePage() {
   }
  
   return (
-    <div className="min-h-screen bg-gray-50 flex items-center justify-center py-12 px-4">
-      <div className="max-w-md w-full">
-        {/* Card */}
-        <div className="bg-white rounded-2xl shadow-2xl overflow-hidden">
+    <div className="flex items-center justify-center min-h-screen px-4 py-12 bg-gray-50">
+      <div className="w-full max-w-md">
+        <div className="overflow-hidden bg-white shadow-2xl rounded-2xl">
           {/* Header */}
-          <div className="bg-gradient-to-r from-primary to-secondary p-8 text-white text-center">
-            <h1 className="text-3xl font-bold mb-2">Update Profile</h1>
+          <div className="p-8 text-center text-white bg-gradient-to-r from-primary to-secondary">
+            <h1 className="mb-2 text-3xl font-bold">Update Profile</h1>
             <p className="text-gray-100">Customize your profile information</p>
           </div>
  
@@ -99,17 +95,17 @@ export default function UpdateProfilePage() {
             <form onSubmit={handleUpdate} className="space-y-6">
               {/* Name Input */}
               <div>
-                <label className="block text-gray-700 font-medium mb-2">
+                <label className="block mb-2 font-medium text-gray-700">
                   Full Name
                 </label>
                 <div className="relative">
-                  <User className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+                  <User className="absolute w-5 h-5 text-gray-400 transform -translate-y-1/2 left-3 top-1/2" />
                   <input
                     type="text"
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
-                    className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                    className="w-full py-3 pl-10 pr-4 transition-all border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
                     placeholder="Your full name"
                     required
                   />
@@ -118,28 +114,29 @@ export default function UpdateProfilePage() {
  
               {/* Image URL Input */}
               <div>
-                <label className="block text-gray-700 font-medium mb-2">
+                <label className="block mb-2 font-medium text-gray-700">
                   Profile Image URL
                 </label>
                 <div className="relative">
-                  <ImageIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+                  <ImageIcon className="absolute w-5 h-5 text-gray-400 transform -translate-y-1/2 left-3 top-1/2" />
                   <input
                     type="url"
                     name="image"
                     value={formData.image}
                     onChange={handleChange}
-                    className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                    className="w-full py-3 pl-10 pr-4 transition-all border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
                     placeholder="https://example.com/photo.jpg"
                   />
                 </div>
+                {/* Image Preview */}
                 {formData.image && (
                   <div className="mt-3">
-                    <p className="text-sm text-gray-600 mb-2">Preview:</p>
-                    <div className="w-24 h-24 rounded-full overflow-hidden border-2 border-gray-200">
-                      <img
+                    <p className="mb-2 text-sm text-gray-600">Preview:</p>
+                    <div className="w-24 h-24 overflow-hidden border-2 border-gray-200 rounded-full">
+                      <img                                    // ✅ fixed
                         src={formData.image}
                         alt="Preview"
-                        className="w-full h-full object-cover"
+                        className="object-cover w-full h-full"
                         onError={(e) => {
                           (e.target as HTMLImageElement).src = '';
                         }}
@@ -156,7 +153,7 @@ export default function UpdateProfilePage() {
                 className="w-full bg-gradient-to-r from-primary to-secondary text-white py-3 rounded-lg font-semibold hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {loading ? (
-                  <div className="w-6 h-6 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                  <div className="w-6 h-6 border-2 border-white rounded-full border-t-transparent animate-spin" />
                 ) : (
                   <>
                     <Save className="w-5 h-5" />
@@ -170,7 +167,7 @@ export default function UpdateProfilePage() {
             <div className="mt-6 text-center">
               <button
                 onClick={() => router.back()}
-                className="text-primary font-semibold hover:underline"
+                className="font-semibold text-primary hover:underline"
               >
                 &larr; Back to Profile
               </button>

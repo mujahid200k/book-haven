@@ -5,9 +5,14 @@ import { MongoClient } from 'mongodb';
 const client = new MongoClient(
   process.env.MONGODB_URI || 'mongodb://localhost:27017/book-haven'
 );
+
+// ✅ এটা যোগ করো — client এর বদলে db pass করতে হবে
+const db = client.db();
  
 export const auth = betterAuth({
-  database: mongodbAdapter(client),
+  
+  database: mongodbAdapter(db), // ✅ client → db
+  
   emailAndPassword: {
     enabled: true,
     requireEmailVerification: false,
@@ -28,11 +33,11 @@ export const auth = betterAuth({
     },
   },
   session: {
-    expiresIn: 60 * 60 * 24 * 7, // 7 days
-    updateAge: 60 * 60 * 24, // 1 day (every 1 day the session expiration is updated)
+    expiresIn: 60 * 60 * 24 * 7,
+    updateAge: 60 * 60 * 24,
     cookieCache: {
       enabled: true,
-      maxAge: 5 * 60, // 5 minutes
+      maxAge: 5 * 60,
     },
   },
   secret: process.env.BETTER_AUTH_SECRET || 'your-secret-key-here',
