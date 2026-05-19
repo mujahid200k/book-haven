@@ -6,12 +6,10 @@ const client = new MongoClient(
   process.env.MONGODB_URI || 'mongodb://localhost:27017/book-haven'
 );
 
-// ✅ এটা যোগ করো — client এর বদলে db pass করতে হবে
 const db = client.db();
  
 export const auth = betterAuth({
-  
-  database: mongodbAdapter(db), // ✅ client → db
+  database: mongodbAdapter(db),
   
   emailAndPassword: {
     enabled: true,
@@ -21,7 +19,7 @@ export const auth = betterAuth({
     google: {
       clientId: process.env.GOOGLE_CLIENT_ID || '',
       clientSecret: process.env.GOOGLE_CLIENT_SECRET || '',
-      enabled: !!(process.env.GOOGLE_CLIENT_ID && process.env.GOOGLE_CLIENT_SECRET),
+      // ✅ enabled field সরিয়ে দিলাম
     },
   },
   user: {
